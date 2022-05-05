@@ -1,0 +1,5 @@
+#+SETUPFILE: ../../org-templates/metadata.org
+#+title: Hello World!
+
+Enjoy your stay!
+Hopefully more posts are to come...

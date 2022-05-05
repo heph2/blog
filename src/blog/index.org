@@ -1,0 +1,5 @@
+#+SETUPFILE: ../../org-templates/metadata.org
+#+TITLE: Blog
+
+
+- [[file:./hello.org][Hello World!]]

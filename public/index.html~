@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pek</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Perk &lt;me@pek.mk&gt;">
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="alternate" type="application/rss+xml" title="~elis/blog/" href="/blog/rss.xml" />
+<link rel="icon" href="/imgs/favicon.jpg">
+<meta name="referrer" content="no-referrer" />
+</head>
+<body>
+<div id="preamble" class="status">
+<header>
+  <nav>
+   <ul>
+    <li><a href="/">~/pek</a></li> /
+    <li><a href="/contact.html">Contact</a></li> /
+    <li><a href="/blog/index.html">Blog</a></li>
+   </ul>
+  </nav>
+</header>
+</div>
+<div id="content">
+<h1 class="title">Pek</h1>
+<p>
+I'm currently studying Computer Science at UniMI.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Perk &lt;me@pek.mk&gt;</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+#+SETUPFILE: ../org-templates/metadata.org
+#+TITLE: Me
+
+I'm currently studying Computer Science at UniMI.

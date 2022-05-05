@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacts</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Perk &lt;me@pek.mk&gt;">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="alternate" type="application/rss+xml" title="~elis/blog/" href="/blog/rss.xml" />
+<link rel="icon" href="/imgs/favicon.jpg">
+<meta name="referrer" content="no-referrer" />
+</head>
+<body>
+<div id="preamble" class="status">
+<header>
+  <h1 class="title">Pek</h1>
+  <nav>
+  <a href="/">Home</a> /
+  <a href="/contact.html">Contact</a> /
+  <a href="/blog/index.html">Blog</a>
+  </nav>
+</header>
+</div>
+<div id="content">
+<h1 class="title">Contacts</h1>
+<ul class="org-ul">
+<li><a href="https://matrix.org/">Matrix</a>: <a href="https://matrix.to/#/@nicholas:nvk.pm">@nicholas:nvk.pm</a></li>
+<li><a href="https://xmpp.org/getting-started/)">XMPP</a>: nicholas@nvk.pm</li>
+<li>E-Mail: <a href="mailto:nicholas@nvk.pm">nicholas@nvk.pm</a> <a href="static/pubkey.asc">pgp</a></li>
+<li><a href="https://joinmastodon.org/">Mastodon</a>: <a href="https://pleroma.nvk.pm/nicholas">nicholas@pleroma.nvk.pm</a></li>
+</ul>
+
+<p>
+<i><a href="https://keyoxide.org/hkp/e46f87ba9f72242eae557122d217c554f45f448e">verify</a></i>
+</p>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+Copyright 2022 Perk &lt;me@pek.mk&gt; ( HTML).<br>
+Last updated 2022-05-05 Thu 11:19. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4).
+</div>
+</div>
+</body>
+</html>

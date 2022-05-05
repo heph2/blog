@@ -1,0 +1,8 @@
+#+SETUPFILE: ../org-templates/metadata.org
+#+TITLE: Contacts
+
+- [[https://matrix.org/][Matrix]]: [[https://matrix.to/#/@heph:matrix.org][@heph:matrix.org]]
+- [[https://xmpp.org/getting-started/)][XMPP]]: chat.pek.mk
+- E-Mail: [[mailto:me@pek.mk][me@pek.mk]]
+- [[https://joinmastodon.org/][Mastodon]]: [[https://fosstodon.org/@heph][@heph]]
+

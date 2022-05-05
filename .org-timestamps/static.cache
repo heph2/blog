@@ -1,0 +1,5 @@
+(setq org-publish-cache (make-hash-table :test 'equal :weakness nil :size 100))
+(puthash ":project:" "static" org-publish-cache)
+(puthash ":cache-file:" "/home/heph/env/blog/.org-timestamps/static.cache" org-publish-cache)
+(puthash "Xe7946b0b6076920def2731da9a876517b3645942" '(25202 50272 372278 359000) org-publish-cache)
+(puthash "X2cdca525b01cce077d6d5b3b23ed1d8d6a293329" '(25203 38702 789371 511000) org-publish-cache)
