@@ -33,11 +33,9 @@
           src = ./.;
           buildInputs = [ emacs ];
           buildPhase = ''
-            mkdir -p public/
-           
             emacs --script publish.el
           '';
-          installPhase = "cp -r public $out";
+          installPhase = "cp -r build $out";
         };
         defaultPackage = packages."${name}";
       });

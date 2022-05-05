@@ -49,6 +49,9 @@
 </header>"
 )
 
+(setq org-publish-use-timestamps-flag nil)
+(setq org-publish-timestamp-directory (concat default-directory "/.org-timestamps"))
+
 (defun pek/org-publish-blog-index (title list)
   "My blog index generator, takes TITLE and LIST of files to make to a string."
   (let ((filtered-list '()))
@@ -76,10 +79,6 @@
               "\n\n"
               (org-list-to-org fixed-list)))))
 
-; Configure org to not put timestamps in the home directory since that breaks
-;; nix-build of the project due to sandboxing.
-(setq org-publish-timestamp-directory "./.org-timestamps/")
-
 ;; Disable the validation links in the footers.
 (setq org-html-validation-link nil)
 
@@ -88,19 +87,19 @@
 
 (setq org-publish-project-alist
       `(("pages"
-	 :base-directory "~/env/blog/src/"
+	 :base-directory "./src/"
 	 :base-extension "org"
 	 :recursive t
-	 :publishing-directory "~/env/blog/public/"
+	 :publishing-directory "./build"
 	 :publishing-function org-html-publish-to-html
 	 :with-toc nil
 	 :html-head nil
 	 :html-preamble , pek-html-preamble)
 
 	("blog"
-	 :base-directory "~/env/blog/src/blog/"
+	 :base-directory "./src/blog/"
 	 :base-extension "org"
-	 :publishing-directory "~/env/blog/public/blog"
+	 :publishing-directory "./build/blog/"
 	 :publishing-function org-html-publish-to-html
 	 :org-html-preamble t
 	 :auto-sitemap t
@@ -112,10 +111,10 @@
 	 :html-preamble , pek-html-preamble)
 
 	("static"
-	 :base-directory "~/env/blog/src/"
+	 :base-directory "./src/"
 	 :base-extension "css\\|txt\\|jpg\\|gif\\|png"
 	 :recursive t
-	 :publishing-directory "~/env/blog/public/"
+	 :publishing-directory "build/"
 	 :publishing-function org-publish-attachment)
 
 	("pek.mk" :components ("pages" "blog" "static"))))
