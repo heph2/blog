@@ -13,6 +13,8 @@
         name = "nix-blog";
         emacs = (pkgs.emacsWithPackages (epkgs: [
           epkgs.org
+          epkgs.htmlize
+          epkgs.weblorg
         ])).overrideAttrs (old: {
           configureFlags = [
             "--disable-build-details"
@@ -33,9 +35,10 @@
           src = ./.;
           buildInputs = [ emacs ];
           buildPhase = ''
-            emacs --script publish.el
+            mkdir -p build
+            emacs --batch --load=publish.el
           '';
-          installPhase = "cp -r build $out";
+          installPhase = "cp -vr build $out";
         };
         defaultPackage = packages."${name}";
       });

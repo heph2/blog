@@ -1,0 +1,88 @@
+#+SETUPFILE: ../../org-templates/metadata.org
+#+title: Brainfuck Compiler in F#
+
+This is my attempt to write a simple [[https://en.wikipedia.org/wiki/Brainfuck][brainfuck]] compiler in F#, that
+outputs [[https://c9x.me/compile/][QBE]] intermediate language, which then can be easily compiled
+using gcc.
+
+* Why F#?
+
+I'm currently attending a "declarative programming" course at
+university, so i thought that writing a compiler would be a great
+exercise
+Also this is a sort-of pair programming exercise with op, which write
+a similar compiler in Haskell, and also write a [[https://www.omarpolo.com/post/bfc-intro.html][post]] about it.
+
+_DISCLAIMER_: I'm currently learning F#, so be gentle :D
+
+* What is brainfuck?
+
+Brainfuck is an esoteric language (touring complete), which has only 8
+commands, that manipulate a 30k cells array.
+
+| > | Increment data pointer to the right               |
+| < | Increment data pointer to the left                |
+| + | Increment the byte at data pointer                |
+| - | Decrement the byte at data pointer                |
+| . | Output the byte at data pointer                   |
+| , | Accept a byte in input                            |
+| [ | Loop until current byte is 0                      |
+| ] | If byte at data pointer is !0 then go back to ']' |
+
+All other commands are interpreted as comments. And that's it!
+
+* How QILBF works?
+
+Qilbf includes a lexer, a parser and a compiler ( i know, it's a bit
+overkill for something like brainfuck ).
+
+** Lexer
+
+A lexer is a program, that convert a stream of structurated text, aka
+source code, and trasform them in a list of predefined symbols
+(tokens), which our parser can understand.
+
+Here's we have the definitions of the tokens
+
+#+begin_src fsharp
+module Lexer
+
+type Token =
+    | INCREMENT
+    | DECREMENT
+    | SHIFT_LEFT
+    | SHIFT_RIGHT
+    | OUTPUT
+    | INPUT
+    | OPEN_LOOP
+    | CLOSE_LOOP
+#+end_src
+
+And here's the actual tokenizer
+
+#+begin_src fsharp
+let lexer (input: string) =
+    let tok (chs: char) =
+        match chs with
+        | '+' -> Some INCREMENT
+        | '-' -> Some DECREMENT
+        | '<' -> Some SHIFT_LEFT
+        | '>' -> Some SHIFT_RIGHT
+        | '.' -> Some OUTPUT
+        | ',' -> Some INPUT
+        | '[' -> Some OPEN_LOOP
+        | ']' -> Some CLOSE_LOOP
+        | _ -> None
+
+    let rec tokenizer (chars: char list) =
+        match chars with
+        | x :: xs ->
+            match tok x with
+            | Some t -> t :: tokenizer xs
+            | None -> tokenizer xs
+        | _ -> []
+
+    input |> Seq.toList |> tokenizer
+#+end_src
+
+This one match each symbols from input and create a token with it.

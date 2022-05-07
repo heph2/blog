@@ -35,7 +35,7 @@
 ;;(require 'webfeeder)
 
 ;; Highlighting of languages
-;;(require 'htmlize)
+(require 'htmlize)
 
 (defvar pek-html-preamble
 "<header>
