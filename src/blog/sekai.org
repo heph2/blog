@@ -1,0 +1,43 @@
+#+SETUPFILE: ../../org-templates/metadata.org
+#+title: Openstack infrastructure managed with NixOS
+
+* What is Openstack?
+
+[[https://www.openstack.org/][Openstack]] is an open source cloud computing platform, which is usually
+deployed as /IaaS/ in both public and private clouds.
+It can be managed through a web-based dashboard, a CLI tool or through
+their RESTFul API.
+Actually i'm leveraging the RESTFul APIs using [[https://www.terraform.io/][Terraform]].
+
+* What is Terraform?
+
+It's the /De facto standard/ for managing cloud infrastructures, from AWS
+to Azure. You can manage the entire infrastructure using code it-self
+(IaC), which is accomplished using a DSL, called HCL, or directly
+using JSON.
+
+Terraform is built on a plugin-based architecture, which can be easily
+extended (Actually this has some drawbacks, but i'll go through that
+in another post)
+It is splitted in two parts: Terraform Core and Terraform Plugins
+(More info [[https://www.terraform.io/plugin/how-terraform-works][here]]).
+Essentially the core uses gRPC to communicate with plugins; each
+plugins expose an implementation for a specific service.
+In our use-case we're going to use the [[https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs][openstack-provider]].
+
+* What is NixOS?
+
+[[https://nixos.org/][NixOS]] is a GNU/Linux distribution based on the Nix package manager,
+which utilize a purely functional deployment model where software is
+installed in unique directories generated through cryptographic hashes.
+
+I don't want to go into too much detail; here's a smallish
+presentation that i made at GARR [[https://www.garr.tv/stream/61924eea0253f50519b98962?playlist=618e694b3ef1a1046924bb9e][workshop]] (min 23:55, although it's italian-only)
+
+* How am i taming these beasts?
+
+Actually the infrastructure it's almost, completly written using nix.
+I'm using [[https://terranix.org/][terranix]] as a wrapper to terraform, which can emit
+terraform's JSON-compatible code.
+
+## DRAFT
