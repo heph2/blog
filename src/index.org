@@ -3,6 +3,8 @@
 
 I'm currently studying Computer Science at UniMI, and also a Free
 Software enthusiast.
+Currently i'm involved in a project called [[https://www.garrlab.it/][garrlab]], which is sponsored
+by [[https://www.garr.it/it/][GARR]], the italian [[https://en.wikipedia.org/wiki/National_research_and_education_network][NREN]].
 
 This website is managed by [[https://orgmode.org/][org-mode]], then built and deployed with
 [[https://nixos.org/][nix]]. More details in [[https://git.sr.ht/~heph/blog][blog-repo]].
